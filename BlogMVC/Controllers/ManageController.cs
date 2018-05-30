@@ -281,6 +281,7 @@ namespace WebApplicationPortfolioSite.Controllers
             return View(model);
         }
 
+        /*
         //
         // GET: /Manage/SetPassword
         public ActionResult CreateOAuthToken()
@@ -288,7 +289,7 @@ namespace WebApplicationPortfolioSite.Controllers
             return View(new CreateOAuthTokenViewModel(){DaysValid = 14});
         }
 
-        /*
+        
         //
         // POST: /Manage/CreateOAuthToken
         [HttpPost]

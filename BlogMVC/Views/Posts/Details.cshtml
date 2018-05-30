@@ -4,62 +4,70 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+@if (Request.IsAuthenticated)
+{
+    <h2>Details</h2>
 
-<div>
-    <h2>Post</h2>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
+    <div>
+        <h2>Post</h2>
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.User.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Content)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Content)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Created)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
 
-    </dl>
-</div>
-<div>
-    <hr />
-    <h2>Comments</h2>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
+        </dl>
+    </div>
+    <div>
+        <hr/>
+        <h2>Comments</h2>
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.User.Name)
-        </dd>
-    </dl>
-    <hr />
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dd>
+                @Html.DisplayFor(model => model.User.Name)
+            </dd>
+        </dl>
+        <hr/>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new {id = Model.ID}) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+else
+{
+    Response.Redirect("/Account/Login");
+}

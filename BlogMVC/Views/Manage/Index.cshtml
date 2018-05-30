@@ -1,5 +1,4 @@
-﻿@model BlogMVC.Models.IndexViewModel
-@{
+﻿@{
     ViewBag.Title = "Manage";
 }
 
@@ -26,7 +25,9 @@
         <dt>External Logins:</dt>
         <dd>
             @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
+            @Html.ActionLink("Manage", "Manage" +
+                                       "Login" +
+                                       "s") ]
         </dd>
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
